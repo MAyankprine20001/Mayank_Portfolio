@@ -5,27 +5,27 @@ const projects = [
   // Row 1
   {
     title: "FENFO",
-    subtitle: "Fence Estimation and Business Management",
+    subtitle: "Fence Estimation & Business Management",
     description:
-      "Contractors draw fence layouts on a canvas over Google Maps and the app calculates material quantities, dimensions, and pricing from the drawing. Built quotation, invoice, and order management. Integrated Google Calendar so customers can book appointments directly, with full dynamic handling for availability, event creation, and updates. Payments via Stripe and PayPal subscriptions.",
+      "Contractors draw fence layouts directly on Google Maps and the app figures out materials, dimensions, and cost from the drawing. I built the quoting, invoicing, and order side too. Added Google Calendar so clients can book site visits, and payments run through Stripe and PayPal.",
     image: "/projects/fenfo.png",
-    tags: ["React", "Node.js", "Google Maps API", "Canvas", "Google Calendar", "Stripe", "PayPal", "JWT"],
+    tags: ["React", "Node.js", "Google Maps", "Google Calendar", "Stripe", "PayPal", "JWT"],
     link: "https://fenfo.com",
   },
   {
     title: "Complex.so",
-    subtitle: "Task Management and Collaboration Platform",
+    subtitle: "Team Task & Collaboration Tool",
     description:
-      "A platform for small teams to manage tasks, write docs, store files, and communicate in one place. Built the entire backend using Koa.js, PostgreSQL, and Redis. Managed state on the frontend with Vue and Vuex. Integrated Google Calendar so tasks with due dates show up in the user calendar and stay in sync. Deployed using Docker.",
+      "A workspace where small teams can manage tasks, write docs, store files, and chat — all in one place. I built the backend with Koa.js, PostgreSQL, and Redis, handled state with Vue and Vuex, and connected Google Calendar so deadlines show up there automatically.",
     image: "/projects/complexso.png",
     tags: ["Vue.js", "Vuex", "Koa.js", "PostgreSQL", "Redis", "Google Calendar", "Docker"],
     link: "https://complex.so",
   },
   {
     title: "Mifab",
-    subtitle: "Commercial Plumbing Products Platform",
+    subtitle: "Commercial Plumbing Products Catalog",
     description:
-      "Built a product catalog and ordering platform for a commercial plumbing manufacturer. The admin controls everything dynamically — products, categories, pricing, content, and translations. Integrated Google Translate so the platform works across multiple languages. State managed with Redux Toolkit throughout.",
+      "Product catalog and ordering site for a plumbing manufacturer. Everything — products, categories, pricing, and content — is managed by the admin without touching code. Also added Google Translate so it works in multiple languages.",
     image: "/projects/mifab.png",
     tags: ["React", "Node.js", "MongoDB", "Redux Toolkit", "Google Translate"],
     link: "http://mifab.ourappdemo.com",
@@ -33,18 +33,18 @@ const projects = [
   // Row 2
   {
     title: "The Dry Factory",
-    subtitle: "E-Commerce Platform",
+    subtitle: "E-Commerce Store",
     description:
-      "Online store for a freeze-dried fruit brand. Built the full shopping experience including product pages, cart, and checkout with Razorpay. Also built the admin panel for managing orders, inventory, and products.",
+      "Online store for a freeze-dried fruit brand. Customers can browse products, add to cart, and pay via Razorpay. Built a separate admin panel for managing products, stock, and orders. Also set up Google Analytics and GTM to track how users land on the site, which products they view, and how often items get added to cart.",
     image: "/projects/thedryfactory.png",
-    tags: ["React", "Node.js", "MongoDB", "Express", "Razorpay", "JWT", "Vercel"],
+    tags: ["React", "Node.js", "MongoDB", "Express", "Razorpay", "Google Analytics", "GTM", "JWT", "Vercel"],
     link: "#",
   },
   {
     title: "Medentum",
-    subtitle: "Health Platform Admin and Cross-Platform App",
+    subtitle: "Health Platform — Admin & Mobile App",
     description:
-      "Built the admin dashboard and cross-platform app for a health diagnostics company. The admin handles patient records, device data, and provider management. Also worked on the mobile side for at-home health monitoring.",
+      "Built the admin panel and cross-platform app for a health diagnostics company. Admin side handles patient records, connected devices, and provider accounts. Also worked on the mobile app for home-based health monitoring.",
     image: "/projects/meduntum.png",
     tags: ["React", "Node.js", "Cross-Platform", "REST API", "PostgreSQL"],
     link: "https://medentum.com",
@@ -53,19 +53,19 @@ const projects = [
     title: "Seven Dates",
     subtitle: "Dating App",
     description:
-      "Fixed production crashes and stabilized the backend on Supabase. Added Google AdSense and Stripe subscriptions using Supabase Edge Functions. Built the matching logic for connecting users and added in-app chat.",
+      "Joined to fix crashes and get the app stable. Once that was done, added Google AdSense and Stripe subscriptions through Supabase Edge Functions, built the user matching logic, and added in-app chat.",
     image: "/projects/Seven_dates.png",
     tags: ["Supabase", "Edge Functions", "Stripe", "Google AdSense", "TypeScript"],
-    link: "#",
+    link: null,
   },
   {
     title: "Zembora",
-    subtitle: "Ride and Rescue App",
+    subtitle: "Ride & Rescue — Admin Panel & Cross-Platform App",
     description:
-      "Backend for a ride booking and vehicle rescue app. Supports standard rides and SOS rescue requests that go straight to the admin. Driver location is tracked live and users can share a tracking link with others.",
+      "Backend for a ride and rescue platform. Regular ride bookings and SOS vehicle rescue both run through the same system — rescues get flagged to admin immediately. Driver location updates live and riders can share a tracking link.",
     image: "/projects/zembora.png",
     tags: ["Node.js", "Express", "Firebase", "Redis", "PostgreSQL"],
-    link: "#",
+    link: null,
   },
 ];
 
@@ -103,12 +103,12 @@ export const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+        {/* <div className="text-center mt-12 animate-fade-in animation-delay-500">
           <AnimatedBorderButton>
             View All Projects
             <ArrowUpRight className="w-5 h-5" />
           </AnimatedBorderButton>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -127,17 +127,19 @@ const ProjectCard = ({ project, delay }) => (
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
-      {/* Overlay - only external link */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-        >
-          <ArrowUpRight className="w-5 h-5" />
-        </a>
-      </div>
+      {/* Overlay - only show if link exists */}
+      {project.link && (
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            <ArrowUpRight className="w-5 h-5" />
+          </a>
+        </div>
+      )}
     </div>
 
     {/* Content */}
