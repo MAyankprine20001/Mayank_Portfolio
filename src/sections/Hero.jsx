@@ -10,24 +10,25 @@ import {
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const skills = [
-  "React",
+  "React.js",
   "Next.js",
   "TypeScript",
   "Node.js",
-  "GraphQL",
+  "Express.js",
   "PostgreSQL",
   "MongoDB",
   "Redis",
+  "Socket.IO",
   "Docker",
-  "AWS",
-  "Vercel",
   "Tailwind CSS",
-  "Prisma",
-  "Jest",
-  "Cypress",
-  "Figma",
-  "Git",
+  "Shadcn",
+  "Vue.js",
+  "Nest.js",
+  "Supabase",
+  "Firebase",
   "GitHub Actions",
+  "Stripe",
+  "Razorpay",
 ];
 
 export const Hero = () => {
@@ -47,14 +48,14 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
+              animation: `slow-drift ${15 + Math.random() * 20
+                }s ease-in-out infinite`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
@@ -69,25 +70,27 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • React Specialist
+                Software Engineer • Full-Stack Developer
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
+                Crafting{" "}
+                <span className="text-primary glow-text">scalable</span>
                 <br />
-                experiences with
+                products with
                 <br />
                 <span className="font-serif italic font-normal text-white">
                   precision.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Pedro Machado — a software engineer specializing in
-                React, Next.js, and TypeScript. I build scalable, performant web
-                applications that users love.
+                Hi, I'm Mayank Pandey — a full-stack software engineer
+                specializing in React.js, Next.js, Node.js, and TypeScript. I
+                build performant, real-world web applications from UI to
+                deployment.
               </p>
             </div>
 
@@ -106,13 +109,20 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
+                {
+                  icon: Github,
+                  href: "https://github.com/MAyankprine20001",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://linkedin.com/in/mayank-pandey-8a513b1b2",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
@@ -120,20 +130,20 @@ export const Hero = () => {
               ))}
             </div>
           </div>
+
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
-            {/* Profile Image */}
+          <div className="animate-fade-in animation-delay-300">
             <div className="relative max-w-md mx-auto">
               <div
                 className="absolute inset-0 
-              rounded-3xl bg-gradient-to-br 
-              from-primary/30 via-transparent 
-              to-primary/10 blur-2xl animate-pulse"
+                rounded-3xl bg-gradient-to-br 
+                from-primary/30 via-transparent 
+                to-primary/10 blur-2xl animate-pulse"
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/profile-photo.jpg"
-                  alt="Pedro Machado"
+                  src="/MayankPhoto.png"
+                  alt="Mayank Pandey"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
 
@@ -146,9 +156,10 @@ export const Hero = () => {
                     </span>
                   </div>
                 </div>
+
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-2xl font-bold text-primary">2.5+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
                   </div>
@@ -158,7 +169,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Skills Section */}
+        {/* Skills Marquee */}
         <div className="mt-20 animate-fade-in animation-delay-600">
           <p className="text-sm text-muted-foreground mb-6 text-center">
             Technologies I work with
@@ -166,11 +177,11 @@ export const Hero = () => {
           <div className="relative overflow-hidden">
             <div
               className="absolute left-0 top-0 bottom-0 w-32
-             bg-gradient-to-r from-background to-transparent z-10"
+              bg-gradient-to-r from-background to-transparent z-10"
             />
             <div
               className="absolute right-0 top-0 bottom-0 w-32
-             bg-gradient-to-l from-background to-transparent z-10"
+              bg-gradient-to-l from-background to-transparent z-10"
             />
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
@@ -185,9 +196,10 @@ export const Hero = () => {
         </div>
       </div>
 
+      {/* Scroll Indicator */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 
-      animate-fade-in animation-delay-800"
+        animate-fade-in animation-delay-800"
       >
         <a
           href="#about"

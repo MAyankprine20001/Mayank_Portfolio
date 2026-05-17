@@ -19,22 +19,29 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleContactClick = () => {
+    setIsMobileMenuOpen(false);
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
-        isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
-      }  z-50`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
+        } z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
         <a
           href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
+          className="text-xl font-bold tracking-tight hover:text-primary transition-colors"
         >
-          PM<span className="text-primary">.</span>
+          MP<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -44,7 +51,7 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors"
               >
                 {link.label}
               </a>
@@ -54,7 +61,9 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button size="sm" onClick={handleContactClick}>
+            Contact Me
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -75,15 +84,13 @@ export const Navbar = () => {
                 href={link.href}
                 key={index}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground py-2"
+                className="text-lg text-muted-foreground hover:text-foreground py-2 transition-colors"
               >
                 {link.label}
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
-              Contact Me
-            </Button>
+            <Button onClick={handleContactClick}>Contact Me</Button>
           </div>
         </div>
       )}

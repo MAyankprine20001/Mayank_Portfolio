@@ -14,19 +14,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "pedro@example.com",
-    href: "mailto:pedro@example.com",
+    value: "mayankpandeyji2001@gmail.com",
+    href: "mailto:mayankpandeyji2001@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91-817-837-0793",
+    href: "tel:+918178370793",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "New Delhi, India",
     href: "#",
   },
 ];
@@ -39,13 +39,12 @@ export const Contact = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
-    type: null, // 'success' or 'error'
+    type: null,
     message: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
     try {
@@ -75,7 +74,7 @@ export const Contact = () => {
         message: "Message sent successfully! I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch (error) {
       console.error("EmailJS error:", error);
       setSubmitStatus({
         type: "error",
@@ -86,6 +85,7 @@ export const Contact = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
@@ -112,6 +112,7 @@ export const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          {/* Contact Form */}
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
@@ -137,12 +138,13 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
@@ -161,6 +163,7 @@ export const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  id="message"
                   rows={5}
                   required
                   value={formData.message}
@@ -190,12 +193,10 @@ export const Contact = () => {
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3
-                     p-4 rounded-xl ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
+                  className={`flex items-center gap-3 p-4 rounded-xl ${submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-400"
+                    }`}
                 >
                   {submitStatus.type === "success" ? (
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
@@ -242,9 +243,9 @@ export const Contact = () => {
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance consultant,
-                let's talk!
+                I'm open to new opportunities and exciting projects. Whether you
+                need a full-stack engineer for a product, a freelance consultant,
+                or someone to join your team — let's talk!
               </p>
             </div>
           </div>

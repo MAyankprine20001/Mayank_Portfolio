@@ -3,26 +3,27 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
+    title: "Full-Stack Development",
     description:
-      "Writing maintainable, scalable code that stands the test of time.",
+      "Building end-to-end solutions from responsive UIs to scalable backend architectures and optimized APIs.",
   },
   {
     icon: Rocket,
     title: "Performance",
     description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
+      "Optimizing database queries, reducing API load, and delivering fast, cross-browser compatible interfaces.",
   },
   {
     icon: Users,
     title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
+    description:
+      "Working closely with clients and teams across dashboards, e-commerce, and real-time applications.",
   },
   {
     icon: Lightbulb,
-    title: "Innovation",
+    title: "Real-World Impact",
     description:
-      "Staying ahead with the latest technologies and best practices.",
+      "Shipping production-grade platforms with payment integrations, real-time features, and live deployments.",
   },
 ];
 
@@ -49,35 +50,36 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                I'm a Software Engineer at EITBIZ (Extrovert Information
+                Technology), where I build scalable full-stack web applications
+                for clients across industries. My work spans responsive frontend
+                UIs, robust backend systems, and seamless third-party
+                integrations.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                I specialize in React.js, Next.js, Node.js, and TypeScript,
+                crafting everything from real-time collaboration platforms to
+                e-commerce flows and ride-tracking systems. I take ownership
+                from architecture to deployment — including payment gateways,
+                authentication, and production debugging.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                When I'm not shipping features, I'm exploring new tools,
+                optimizing systems, and staying sharp on the latest in web
+                development.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                "My goal is to build products that are reliable, performant, and
+                genuinely useful — code that's clean enough for developers to
+                love and fast enough for users to never notice."
               </p>
             </div>
           </div>
 
-          {/* Right Column - Hilights */}
+          {/* Right Column - Highlights */}
           <div className="grid sm:grid-cols-2 gap-6">
             {highlights.map((item, idx) => (
               <div

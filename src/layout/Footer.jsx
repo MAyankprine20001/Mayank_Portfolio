@@ -1,15 +1,28 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  {
+    icon: Github,
+    href: "https://github.com/MAyankprine20001",
+    label: "GitHub",
+  },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/mayank-pandey-8a513b1b2",
+    label: "LinkedIn",
+  },
+  {
+    icon: Mail,
+    href: "mailto:mayankpandeyji2001@gmail.com",
+    label: "Email",
+  },
 ];
 
 const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -23,14 +36,17 @@ export const Footer = () => {
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <a href="#" className="text-xl font-bold tracking-tight">
-              PM<span className="text-primary">.</span>
+              MP<span className="text-primary">.</span>
             </a>
-            <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Pedro Machado. All rights reserved.
+            <p className="text-sm text-muted-foreground mt-1">
+              Mayank Pandey — Full-Stack Software Engineer
+            </p>
+            <p className="text-xs text-muted-foreground/60 mt-1">
+              © {currentYear} Mayank Pandey. All rights reserved.
             </p>
           </div>
 
-          {/* Links */}
+          {/* Nav Links */}
           <nav className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
               <a
@@ -44,12 +60,14 @@ export const Footer = () => {
           </nav>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
               >
                 <social.icon className="w-5 h-5" />
