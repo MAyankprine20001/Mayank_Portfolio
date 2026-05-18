@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Puzzle, Shield, Database, Cloud, CreditCard, LayoutTemplate, Code2, Lock } from "lucide-react";
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs, SiStripe, SiRazorpay, SiPaypal, SiGooglepay, SiGooglemaps, SiGooglecalendar, SiGoogletranslate, SiGoogleadsense } from "react-icons/si";
 
 const categoryColors = {
   "Frontend": "text-purple-400",
@@ -72,16 +72,16 @@ const techStack = [
     {
         category: "Integrations",
         skills: [
-            { name: "Stripe", icon: renderIcon(null, CreditCard) },
-            { name: "Razorpay", icon: renderIcon(null, CreditCard) },
-            { name: "PayPal", icon: renderIcon(null, CreditCard) },
-            { name: "Google Pay", icon: renderIcon("devicon-google-plain colored") },
+            { name: "Stripe", icon: <SiStripe className="w-8 h-8 text-[#635BFF] drop-shadow-sm" /> },
+            { name: "Razorpay", icon: <SiRazorpay className="w-8 h-8 text-[#3395FF] drop-shadow-sm" /> },
+            { name: "PayPal", icon: <SiPaypal className="w-8 h-8 text-[#00457C] drop-shadow-sm" /> },
+            { name: "Google Pay", icon: <SiGooglepay className="w-10 h-10 text-white drop-shadow-sm" /> },
             { name: "Apple Pay", icon: renderIcon("devicon-apple-original", null) },
-            { name: "Google Maps API", icon: renderIcon("devicon-google-plain colored") },
-            { name: "Google Calendar", icon: renderIcon("devicon-google-plain colored") },
-            { name: "Google Translate", icon: renderIcon("devicon-google-plain colored") },
-            { name: "Google AdSense", icon: renderIcon("devicon-google-plain colored") },
-            { name: "Translate API", icon: renderIcon("devicon-google-plain colored") },
+            { name: "Google Maps API", icon: <SiGooglemaps className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
+            { name: "Google Calendar", icon: <SiGooglecalendar className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
+            { name: "Google Translate", icon: <SiGoogletranslate className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
+            { name: "Google AdSense", icon: <SiGoogleadsense className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
+            { name: "Translate API", icon: <SiGoogletranslate className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
             { name: "canvas", icon: renderIcon("devicon-html5-plain colored") }
         ],
     },
