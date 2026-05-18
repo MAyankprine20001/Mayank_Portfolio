@@ -6,6 +6,8 @@ import {
   Linkedin,
   Twitter,
   Download,
+  MapPin,
+  Mail,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
@@ -133,39 +135,53 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Profile Image */}
-          <div className="animate-fade-in animation-delay-300">
-            <div className="relative max-w-md mx-auto">
-              <div
-                className="absolute inset-0 
-                rounded-3xl bg-gradient-to-br 
-                from-primary/30 via-transparent 
-                to-primary/10 blur-2xl animate-pulse"
+          {/* Right Column - Profile Card */}
+          <div className="animate-fade-in animation-delay-300 flex flex-col gap-4 max-w-sm mx-auto w-full">
+            {/* Profile Card */}
+            <div className="relative glass rounded-[2rem] p-8 border border-white/5 flex flex-col items-center text-center shadow-2xl">
+              <img
+                src="/MayankPhoto.png"
+                alt="Mayank Pandey"
+                className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top border-2 border-white/10 shadow-xl mb-5 grayscale hover:grayscale-0 transition-all duration-500"
               />
-              <div className="relative glass rounded-3xl p-2 glow-border">
-                <img
-                  src="/MayankPhoto.png"
-                  alt="Mayank Pandey"
-                  className="w-full aspect-[4/5] object-cover rounded-2xl"
-                />
+              
+              <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">Mayank Pandey</h3>
+              <p className="text-muted-foreground text-sm mb-6">Full-Stack Software Engineer</p>
+              
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  { name: "React", color: "text-[#61DAFB]" },
+                  { name: "Next.js", color: "text-white" },
+                  { name: "JavaScript", color: "text-[#F7DF1E]" },
+                  { name: "Node.js", color: "text-[#339933]" },
+                  { name: "TypeScript", color: "text-[#3178C6]" },
+                ].map((tech) => (
+                  <span key={tech.name} className={`px-4 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-background/50 ${tech.color}`}>
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-                {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">
-                      Available for work
-                    </span>
-                  </div>
-                </div>
+            {/* Location Card */}
+            <div className="glass rounded-2xl p-5 border border-white/5 flex items-center gap-5 hover:bg-white/5 transition-colors">
+              <div className="flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-6 h-6 text-pink-500 fill-pink-500/20" />
+              </div>
+              <div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Location</div>
+                <div className="text-sm font-medium text-white">New Delhi, India</div>
+              </div>
+            </div>
 
-                {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">2.5+</div>
-                  <div className="text-xs text-muted-foreground">
-                    Years Exp.
-                  </div>
-                </div>
+            {/* Email Card */}
+            <div className="glass rounded-2xl p-5 border border-white/5 flex items-center gap-5 hover:bg-white/5 transition-colors">
+              <div className="flex items-center justify-center flex-shrink-0">
+                <Mail className="w-6 h-6 text-purple-200 fill-purple-200/20" />
+              </div>
+              <div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Email</div>
+                <div className="text-sm font-medium text-white">mayankpandeyji2001@gmail.com</div>
               </div>
             </div>
           </div>
