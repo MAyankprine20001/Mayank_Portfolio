@@ -25,14 +25,37 @@ const experiences = [
     ],
     current: true,
     highlights: [
-      "Built shared UI component libraries in React.js, Next.js, Tailwind CSS, and SCSS — reused across multiple client projects to keep the frontend consistent",
-      "Wired up Stripe, Razorpay, Google Pay, Apple Pay, and PayPal into checkout flows, handling cart state, order creation, and webhook confirmation",
-      "Wrote Node.js/Express APIs with PostgreSQL and MongoDB — designed the schemas, wrote the queries, and kept response times tight",
-      "Set up JWT auth and role-based access control from scratch, and added Socket.IO + Redis for live features like chat, presence, and notifications",
-      "Debugged production issues — traced API failures through logs, fixed slow queries, and patched frontend bugs to get deployments back on track",
+      <>Refactored React.js rendering and data-fetching for a high-traffic infinite-scroll feed; <strong>load time dropped from 600ms to under 20ms with a 20% lift in user engagement</strong>.</>,
+      <>Built a shared component library in React.js, Next.js, Tailwind CSS, and SCSS used across multiple client projects; <strong>cut per-project frontend setup time and removed duplicate UI code</strong>.</>,
+      <>Integrated Stripe, Razorpay, PayPal, Google Pay, and Apple Pay into checkout flows across 5+ apps; <strong>zero critical billing incidents</strong> after go-live.</>,
+      <>Wrote Node.js/Express APIs and designed schemas in PostgreSQL and MongoDB; used compound indexes, aggregation pipelines, and PostGIS to <strong>speed up location-based queries</strong>.</>,
+      <>Added Redis caching and rate limiting to reduce DB pressure under traffic spikes; containerized services with Docker and automated deploys through GitHub Actions.</>,
+      <>Built Socket.IO real-time features and implemented JWT, OAuth 2.0, and Firebase Auth with role-based access control across production apps.</>,
+      <>Debugged API failures, slow queries, and frontend regressions in live projects; kept deployments stable with no major incidents.</>,
     ],
   },
-
+  {
+    period: "Jun 2023 — Feb 2024",
+    role: "Software Developer",
+    company: "FABTRIP",
+    location: "New Delhi, IN",
+    description:
+      "Built a custom travel booking platform and AI trip planner from scratch, focusing on highly responsive user interfaces and performance optimization across the checkout funnel.",
+    technologies: [
+      "React.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Redux Toolkit",
+      "REST APIs",
+    ],
+    current: false,
+    highlights: [
+      <>Built the customer-facing travel booking platform from scratch; shipped destination discovery, curated trip listings, and the full checkout flow to production.</>,
+      <>Owned the AI trip planner UI and destination pages end-to-end; introduced reusable responsive components that <strong>cut build time for new pages significantly</strong>.</>,
+      <>Identified and fixed performance bottlenecks and JS bugs across the booking funnel; <strong>load reliability improved and drop-off at checkout reduced</strong>.</>,
+    ],
+  },
 ];
 
 export const Experience = () => {

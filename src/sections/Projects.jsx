@@ -21,9 +21,9 @@ const professionalProjects = [
     badge: "SOLO DEVELOPER",
     iconColor: "bg-blue-500",
     description:
-      "Contractors draw fence layouts directly on Google Maps and the app figures out materials, dimensions, and cost from the drawing. I built the quoting, invoicing, and order side too. Added Google Calendar so clients can book site visits, and payments run through Stripe and PayPal.",
+      "Contractors draw fence layouts directly on Google Maps and the app automatically calculates dimensions, materials, and cost from the geometry in real time. Integrated Sentry for real-time error tracking and performance monitoring across the frontend and backend to catch and resolve issues faster. Built the billing systems using Stripe and PayPal.",
     image: "/projects/fenfo.png",
-    tags: ["React", "Node.js", "Google Maps", "Stripe", "PayPal"],
+    tags: ["React", "Node.js", "Google Maps", "Stripe", "PayPal", "Sentry"],
     link: "https://fenfo.com",
   },
   {

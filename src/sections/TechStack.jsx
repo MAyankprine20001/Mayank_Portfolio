@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Puzzle, Shield, Database, Cloud, CreditCard, LayoutTemplate, Code2, Lock } from "lucide-react";
-import { SiNextdotjs, SiStripe, SiRazorpay, SiPaypal, SiGooglepay, SiGooglemaps, SiGooglecalendar, SiGoogletranslate, SiGoogleadsense } from "react-icons/si";
+import { SiNextdotjs, SiStripe, SiRazorpay, SiPaypal, SiGooglepay, SiGooglemaps, SiGooglecalendar, SiGoogletranslate, SiGoogleadsense, SiSentry } from "react-icons/si";
 
 const categoryColors = {
   "Frontend": "text-purple-400",
@@ -82,6 +82,7 @@ const techStack = [
             { name: "Google Translate", icon: <SiGoogletranslate className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
             { name: "Google AdSense", icon: <SiGoogleadsense className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
             { name: "Translate API", icon: <SiGoogletranslate className="w-8 h-8 text-[#4285F4] drop-shadow-sm" /> },
+            { name: "Sentry", icon: <SiSentry className="w-8 h-8 text-[#362D59] drop-shadow-sm" /> },
             { name: "canvas", icon: renderIcon("devicon-html5-plain colored") }
         ],
     },
