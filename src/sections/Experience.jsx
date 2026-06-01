@@ -126,7 +126,7 @@ export const Experience = () => {
                       className="text-sm text-muted-foreground flex items-start gap-2"
                     >
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      {point}
+                      <span>{point}</span>
                     </li>
                   ))}
                 </ul>
