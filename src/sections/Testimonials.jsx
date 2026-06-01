@@ -10,6 +10,15 @@ const testimonials = [
     avatar: "https://ui-avatars.com/api/?name=Durgesh+Sharma&background=20B2A6&color=fff&size=100",
     linkedin: "https://www.linkedin.com/in/mayank-pandey-8a513b1b2/details/recommendations/",
   },
+  {
+    quote:
+      "I had the pleasure of working with Mayank on a project where he worked as a React Developer and I handled the QA side. He is an extremely talented developer with strong technical knowledge and a great understanding of frontend development. His ability to create responsive, user-friendly, and high-quality applications was truly impressive. He pays attention to details, writes clean code, and always ensures the work is completed on time.",
+    author: "Ritika Gupta",
+    role: "Software Quality Assurance Engineer at EitBiz - Extrovert Information Technology",
+    relationship: "Managed Mayank directly at EITBIZ",
+    avatar: "https://ui-avatars.com/api/?name=Ritika+Gupta&background=FF5733&color=fff&size=100",
+    linkedin: "https://www.linkedin.com/in/mayank-pandey-8a513b1b2/details/recommendations/",
+  },
 ];
 
 export const Testimonials = () => {
@@ -31,67 +40,71 @@ export const Testimonials = () => {
           </h2>
         </div>
 
-        {/* Single Testimonial */}
-        <div className="max-w-3xl mx-auto animate-fade-in animation-delay-200">
-          <div className="relative glass p-8 md:p-12 rounded-3xl glow-border">
-            {/* Quote Icon */}
-            <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-              <Quote className="w-6 h-6 text-primary-foreground" />
-            </div>
-
-            {/* LinkedIn Badge */}
-            <div className="absolute -top-4 right-8">
-              <a
-                href={testimonials[0].linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-1.5 glass rounded-full text-xs text-primary border border-primary/30 hover:bg-primary/10 transition-all"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-                Verified on LinkedIn
-              </a>
-            </div>
-
-            {/* Quote */}
-            <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-10 pt-6 text-foreground">
-              "{testimonials[0].quote}"
-            </blockquote>
-
-            {/* Author */}
-            <div className="flex items-center gap-4">
-              <img
-                src={testimonials[0].avatar}
-                alt={testimonials[0].author}
-                className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/30"
-              />
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto animate-fade-in animation-delay-200">
+          {testimonials.map((t, idx) => (
+            <div key={idx} className="relative glass p-8 md:p-10 rounded-3xl glow-border flex flex-col justify-between">
               <div>
-                <div className="font-semibold text-foreground">
-                  {testimonials[0].author}
+                {/* Quote Icon */}
+                <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                  <Quote className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <div className="text-sm text-primary/80">
-                  {testimonials[0].role}
+
+                {/* LinkedIn Badge */}
+                <div className="absolute -top-4 right-8">
+                  <a
+                    href={t.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-1.5 glass rounded-full text-[10px] text-primary border border-primary/30 hover:bg-primary/10 transition-all"
+                  >
+                    <Linkedin className="w-3.5 h-3.5" />
+                    Verified on LinkedIn
+                  </a>
                 </div>
-                <div className="text-xs text-muted-foreground mt-0.5">
-                  {testimonials[0].relationship}
+
+                {/* Quote */}
+                <blockquote className="text-base md:text-lg font-medium leading-relaxed mb-8 pt-6 text-foreground">
+                  "{t.quote}"
+                </blockquote>
+              </div>
+
+              {/* Author */}
+              <div className="flex items-center gap-4 mt-auto">
+                <img
+                  src={t.avatar}
+                  alt={t.author}
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/30"
+                />
+                <div>
+                  <div className="font-semibold text-foreground text-sm">
+                    {t.author}
+                  </div>
+                  <div className="text-xs text-primary/80 leading-normal">
+                    {t.role}
+                  </div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5">
+                    {t.relationship}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* CTA to LinkedIn */}
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            Want to leave a recommendation?{" "}
-            <a
-              href="https://www.linkedin.com/in/mayank-pandey-8a513b1b2/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline inline-flex items-center gap-1"
-            >
-              Connect on LinkedIn
-              <Linkedin className="w-3.5 h-3.5" />
-            </a>
-          </p>
+          ))}
         </div>
+
+        {/* CTA to LinkedIn */}
+        <p className="text-center text-sm text-muted-foreground mt-12">
+          Want to leave a recommendation?{" "}
+          <a
+            href="https://www.linkedin.com/in/mayank-pandey-8a513b1b2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline inline-flex items-center gap-1"
+          >
+            Connect on LinkedIn
+            <Linkedin className="w-3.5 h-3.5" />
+          </a>
+        </p>
       </div>
     </section>
   );
