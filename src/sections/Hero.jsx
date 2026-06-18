@@ -56,8 +56,9 @@ export const Hero = () => {
               backgroundColor: "#20B2A6",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20
-                }s ease-in-out infinite`,
+              animation: `slow-drift ${
+                15 + Math.random() * 20
+              }s ease-in-out infinite`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
@@ -101,7 +102,7 @@ export const Hero = () => {
               <Button size="lg">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <a href="/Mayank_Pandey_CV.pdf" download="Mayank_Pandey_CV.pdf">
+              <a href="/Mayank_Resume.pdf" download="Mayank_Pandey_CV.pdf">
                 <AnimatedBorderButton>
                   <Download className="w-5 h-5" />
                   Download CV
@@ -144,10 +145,14 @@ export const Hero = () => {
                 alt="Mayank Pandey"
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top border-2 border-white/10 shadow-xl mb-5 grayscale hover:grayscale-0 transition-all duration-500"
               />
-              
-              <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">Mayank Pandey</h3>
-              <p className="text-muted-foreground text-sm mb-6">Full-Stack Software Engineer</p>
-              
+
+              <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">
+                Mayank Pandey
+              </h3>
+              <p className="text-muted-foreground text-sm mb-6">
+                Full-Stack Software Engineer
+              </p>
+
               <div className="flex flex-wrap justify-center gap-2">
                 {[
                   { name: "React", color: "text-[#61DAFB]" },
@@ -156,7 +161,10 @@ export const Hero = () => {
                   { name: "Node.js", color: "text-[#339933]" },
                   { name: "TypeScript", color: "text-[#3178C6]" },
                 ].map((tech) => (
-                  <span key={tech.name} className={`px-4 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-background/50 ${tech.color}`}>
+                  <span
+                    key={tech.name}
+                    className={`px-4 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-background/50 ${tech.color}`}
+                  >
                     {tech.name}
                   </span>
                 ))}
@@ -169,8 +177,12 @@ export const Hero = () => {
                 <MapPin className="w-6 h-6 text-pink-500 fill-pink-500/20" />
               </div>
               <div>
-                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Location</div>
-                <div className="text-sm font-medium text-white">New Delhi, India</div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
+                  Location
+                </div>
+                <div className="text-sm font-medium text-white">
+                  New Delhi, India
+                </div>
               </div>
             </div>
 
@@ -180,8 +192,12 @@ export const Hero = () => {
                 <Mail className="w-6 h-6 text-purple-200 fill-purple-200/20" />
               </div>
               <div>
-                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Email</div>
-                <div className="text-sm font-medium text-white">mayankpandeyji2001@gmail.com</div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
+                  Email
+                </div>
+                <div className="text-sm font-medium text-white">
+                  mayankpandeyji2001@gmail.com
+                </div>
               </div>
             </div>
           </div>
